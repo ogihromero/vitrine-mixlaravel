@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_picture',
+        'phone_number',
     ];
 
     /**
@@ -42,4 +44,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
+
+    protected function shops()
+    {
+        return $this->hasMany(Shop::class);
+    }
 }
