@@ -35,4 +35,9 @@ class Shop extends Model
     {
         return $this->hasOne(Address::class);
     }
+
+    protected function services()
+    {
+        return $this->hasMany(Services::class);
+    }
 }
